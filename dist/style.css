@@ -1,0 +1,120 @@
+/*
+ * CSS Reset: TODO: Add author
+ *
+ */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+body {
+    background-color: #F3F3F3;
+    font-family: sans-serif; /* TODO: Download Webfont to use instead */
+    font-size: 16px;
+    color: #252525;
+}
+
+body, html {
+    min-height: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 2.2em;
+    margin: .8em 0;
+}
+
+h2 {
+    font-size: 2em;
+    
+    margin: .6em 0;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin: .4em 0;
+}
+
+h4 {
+    font-size: 1.6em;
+    margin: .2em 0;
+}
+
+h5 {
+    font-size: 1.4em;
+    margin: .2em 0;
+}
+
+h6 {
+    font-size: 1.2em;
+    margin: .2em 0;
+}
+
+.fl-content {
+    display: block;
+    width: 100%;
+    padding: 0 5%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.fl-menu {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    background-color: #252525;
+    color: #F3F3F3;
+}
+
+.fl-menu-item {
+    display: inline-block;
+    width: auto;
+    padding: 1em;
+}
+
+.fl-menu-item.active:before {
+    content: '';
+}
+.fl-menu-item.active:before {
+    content: '';
+}
+
+.fl-menu-item:hover {
+    cursor: pointer;
+}
+
+.fl-button {
+    padding: .6em 1em;
+    background-color: #44C444;
+    color: #F3F3F3;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.fl-button:hover {
+    background-color: #61D661;
+}
+
+.fl-button.danger {
+    background-color: #C72121;
+}
+
+.fl-button.danger:hover {
+    background-color: #CE3737;
+}
+
+.fl-button.primary {
+    background-color: #44C444;
+}
+
+.fl-button.primary:hover {
+    background-color: #61D661;
+}
+
+.fl-button.secondary {
+    background-color: #3E42BD;
+}
+
+.fl-button.secondary:hover {
+    background-color: #696DDF;
+}
