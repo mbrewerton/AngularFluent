@@ -135,23 +135,23 @@ h6 {
   bottom: -20px;
   z-index: -1; }
 
-.fl-menu {
+.fl-nav {
   display: block;
   width: 100%;
   min-height: 50px;
   background-color: #252525;
   color: #F3F3F3; }
 
-.fl-menu-item {
+.fl-nav-item {
   display: inline-block;
   width: auto;
   padding: 1em; }
 
-.fl-menu-item.active:before {
+.fl-nav-item.active:before {
   content: ''; }
 
-.fl-menu-item.active:before {
+.fl-nav-item.active:before {
   content: ''; }
 
-.fl-menu-item:hover {
+.fl-nav-item:hover {
   cursor: pointer; }

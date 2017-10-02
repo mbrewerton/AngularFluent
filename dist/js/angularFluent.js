@@ -4,8 +4,8 @@
         'angularFluent.components.button',
         'angularFluent.components.content',
         'angularFluent.components.dialog',
-        'angularFluent.components.menu',
-        'angularFluent.components.menuItem',
+        'angularFluent.components.nav',
+        'angularFluent.components.navItem',
         'angularFluent.components.theme',
         'angularFluent.components.button',
     ]);
@@ -74,31 +74,52 @@
             }
         });
 }());
+// (function () {
+//     angular.module('angularFluent.components.nav', ['angularFluent.core'])
+//         .controller('flNavController', FlNavController)
+//         .directive('flNav', FlNav);
+
+//     function FlNav() {
+//         return {
+//             restrict: 'E',
+//             controller: FlNavController,
+//             controllerAs: 'ctrl',
+//             template: '<div class="fl-nav"></div>'
+//         }
+//     }
+
+//     function FlNavController($scope, $element, $attrs) {
+//         var self = this;
+//     }
+// }());
+
 (function () {
-    angular.module('angularFluent.components.menu', ['angularFluent.core'])
-        .directive('flMenu', function () {
+    angular.module('angularFluent.components.nav', ['angularFluent.core'])
+        .directive('flNav', function() {
             var controller = [
                 '$scope', '$element', '$attrs',
-                function ($scope, $element, $attrs) {
+                function($scope, $element, $attrs) {
                     var self = this;
-                    $element[0].classList.add('fl-menu');
                 }
             ];
 
             return {
                 restrict: 'E',
-                controller: controller
-            }
-        });
-}());
+                controller: controller,
+                transclude: true,
+                controllerAs: 'ctrl',
+                template: '<div class="fl-nav" ng-transclude></div>'
+            };
+        })
+})();
 (function () {
-    angular.module('angularFluent.components.menuItem', ['angularFluent.core'])
-        .directive('flMenuItem', function () {
+    angular.module('angularFluent.components.navItem', ['angularFluent.core'])
+        .directive('flNavItem', function () {
             var controller = [
                 '$scope', '$element', '$attrs',
                 function ($scope, $element, $attrs) {
                     var self = this;
-                    $element[0].classList.add('fl-menu-item');
+                    $element[0].classList.add('fl-nav-item');
                 }
             ];
 
