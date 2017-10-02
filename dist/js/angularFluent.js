@@ -12,22 +12,29 @@
 }());
 (function () {
     angular.module('angularFluent.components.button', ['angularFluent.core'])
-        .directive('flButton', function () {
-            var controller = [
-                '$scope', '$element', '$attrs',
-                function ($scope, $element, $attrs) {
-                    var self = this;
-                    $element[0].classList.add('fl-button');
+        .directive('flButton', FlButton);
 
-                    console.log('Initialised flButton');
-                }
-            ];
+    function FlButton() {
+        return {
+            restrict: 'E',
+            replace: true,
+            transclude: true,
+            controllerAs: 'ctrl',
+            template: getTemplate
+        }
 
-            return {
-                restrict: 'E',
-                controller: controller,
+        function getTemplate(element, attrs) {
+            if (isAnchor(attrs)) {
+                return '<a class="fl-button" ng-transclude></a>';
+            } else {
+                return '<button class="fl-button" ng-transclude></button>'
             }
-        });
+        }
+
+        function isAnchor(attrs) {
+            return angular.isDefined(attrs.href) || angular.isDefined(attrs.ngHref);
+        }
+    }
 }());
 (function () {
     angular.module('angularFluent.components.content', ['angularFluent.core'])
@@ -125,7 +132,8 @@
 
             return {
                 restrict: 'E',
-                controller: controller
+                controller: controller,
+                controllerAs: 'ctrl'
             }
         });
 }());

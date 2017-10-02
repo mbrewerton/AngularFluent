@@ -69,7 +69,13 @@ h6 {
   color: #F3F3F3;
   display: inline-block;
   cursor: pointer;
-  transition: all .1s ease-in; }
+  transition: all .1s ease-in;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font-size: 1em;
+  line-height: 1em;
+  vertical-align: top; }
 
 .fl-button:hover {
   background-color: #61D661; }
