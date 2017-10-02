@@ -1,0 +1,40 @@
+.fl-dialog {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.fl-dialog .fl-dialog-content {
+    width: 50%;
+    margin: auto auto;
+    position: absolute;
+    top: 0;
+    /* height: auto; */
+    height: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.fl-dialog .fl-dialog-content h1 {
+}
+
+.fl-dialog .fl-dialog-content:before {
+    content: '';
+    background: inherit;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 3000px rgba(255,255,255,0.3);
+    filter: blur(10px);
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    z-index: -1;
+}

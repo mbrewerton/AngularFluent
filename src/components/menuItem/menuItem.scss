@@ -1,0 +1,16 @@
+.fl-menu-item {
+    display: inline-block;
+    width: auto;
+    padding: 1em;
+}
+
+.fl-menu-item.active:before {
+    content: '';
+}
+.fl-menu-item.active:before {
+    content: '';
+}
+
+.fl-menu-item:hover {
+    cursor: pointer;
+}

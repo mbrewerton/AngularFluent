@@ -7,11 +7,12 @@
 
     <script src="/app/components/angular/angular.min.js"></script>
     <script src="/app/components/angular-route/angular-route.min.js"></script>
+    <script src="/app/components/angular-animate/angular-animate.min.js"></script>
 
-    <script src="/dist/core/fluentCore.js"></script>
+    <script src="/dist/js/angularFluent.js"></script>
     <script src="/app/core/app.js"></script>
 
-    <link rel="stylesheet" href="/dist/style.css">
+    <link rel="stylesheet" href="/dist/css/style.css">
     <link rel="stylesheet" href="/dist/libs/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -23,6 +24,7 @@
             <fl-menu-item>Item #3</fl-menu-item>
         </fl-menu>
         <fl-content>
+            <fl-dialog fl-dialog-show="true" fl-dialog-header="This is a dialog."></fl-dialog>
             <h1>Fl Content H1</h1>
             <fl-button>Default</fl-button>
             <fl-button class="success">Success</fl-button>

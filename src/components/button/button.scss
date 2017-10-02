@@ -1,0 +1,39 @@
+@import '../../core/scss/_config.scss';
+@import '../../core/scss/_mixins.scss';
+
+.fl-button {
+    padding: .6em 1em;
+    background-color: #44C444;
+    color: #F3F3F3;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.fl-button:hover {
+    background-color: #61D661;
+}
+
+.fl-button.danger {
+    background-color: #C72121;
+}
+
+.fl-button.danger:hover {
+    background-color: #CE3737;
+}
+
+.fl-button.primary {
+    background-color: #44C444;
+}
+
+.fl-button.primary:hover {
+    background-color: #61D661;
+}
+
+.fl-button.secondary {
+    background-color: #3E42BD;
+}
+
+.fl-button.secondary:hover {
+    background-color: #696DDF;
+}
