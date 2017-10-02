@@ -1,4 +1,4 @@
 angular.module('fluentDemo', [
     'ngRoute',
-    'angularFluent'
+    'angularFluent.core'
 ]);

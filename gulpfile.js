@@ -32,7 +32,6 @@ gulp.task('build:js', function() {
             'core/core.js',
             'core/helpers/**/*.js',
             'core/services/**/*.js',
-            'components/components.js',
             'components/**/*.js',
         ]))
         .pipe(concat('angularFluent.js'))
