@@ -26,7 +26,7 @@ var plumberHandler = plumber({
 });
 
 gulp.task('build:js', function() {
-    gulp.src(paths.src.js + '**/*.js')
+    return gulp.src(paths.src.js + '**/*.js')
         .pipe(plumberHandler)
         .pipe(order([
             'core/core.js',
@@ -39,7 +39,7 @@ gulp.task('build:js', function() {
 });
 
 gulp.task('build:css', function() {
-    gulp.src([paths.src.scss + '**/*.scss', '!./src/libs/**/*.*'])
+    return gulp.src([paths.src.scss + '**/*.scss', '!./src/libs/**/*.*'])
         .pipe(plumberHandler)
         .pipe(order([
             'core/scss/base.scss',
@@ -49,3 +49,7 @@ gulp.task('build:css', function() {
         .pipe(concat('angularFluent.css'))
         .pipe(gulp.dest(paths.dist.css));
 });
+
+gulp.task('watch:js:build', function() {
+    watch(paths.src.js + '**/*.js', {}, function() { gulp.start('build:js'); });
+})

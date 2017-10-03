@@ -38,22 +38,22 @@
 }());
 (function () {
     angular.module('angularFluent.components.content', ['angularFluent.core'])
-        .directive('flContent', function () {
-            var controller = [
-                '$scope', '$element', '$attrs',
-                function ($scope, $element, $attrs) {
-                    var self = this;
-                    $element[0].classList.add('fl-content')
-                    console.log();
-                    console.log('Initialised flContent');
-                }
-            ];
+        .directive('flContent', FlContent);
 
+        function FlContent () {
             return {
                 restrict: 'E',
-                controller: controller,
+                transclude: true,
+                replace: true,
+                controller: FlContentController,
+                controllerAs: 'ctrl',
+                template: '<div class="fl-content" ng-transclude></div>'
             }
-        });
+        }
+
+        function FlContentController($scope, $element, $attrs) {
+            var ctrl = this;
+        }
 }());
 (function () {
     angular.module('angularFluent.components.dialog', ['angularFluent.core'])
@@ -102,40 +102,42 @@
 
 (function () {
     angular.module('angularFluent.components.nav', ['angularFluent.core'])
-        .directive('flNav', function() {
-            var controller = [
-                '$scope', '$element', '$attrs',
-                function($scope, $element, $attrs) {
-                    var self = this;
-                }
-            ];
+        .directive('flNav', FlNav)
 
+        function FlNav() {
             return {
                 restrict: 'E',
-                controller: controller,
                 transclude: true,
+                replace: true,
+                controller: FlNavController,
                 controllerAs: 'ctrl',
-                template: '<div class="fl-nav" ng-transclude></div>'
+                template: '<nav role="navigation"><ul class="fl-nav" ng-transclude></ul></nav>'
             };
-        })
+        }
+
+        function FlNavController() {
+
+        }
 })();
 (function () {
     angular.module('angularFluent.components.navItem', ['angularFluent.core'])
-        .directive('flNavItem', function () {
-            var controller = [
-                '$scope', '$element', '$attrs',
-                function ($scope, $element, $attrs) {
-                    var self = this;
-                    $element[0].classList.add('fl-nav-item');
-                }
-            ];
+        .directive('flNavItem', FlNavItem)
 
+        function FlNavItem() {
             return {
                 restrict: 'E',
-                controller: controller,
-                controllerAs: 'ctrl'
+                transclude: true,
+                replace: true,
+                controller: FlNavItemController,
+                requires: ['^flNav'],
+                controllerAs: 'ctrl',
+                template: '<li class="fl-nav-item" ng-transclude></li>'
             }
-        });
+        }
+
+        function FlNavItemController() {
+            var ctrl = this;
+        }
 }());
 (function () {
     angular.module('angularFluent.components.theme', ['angularFluent.core'])

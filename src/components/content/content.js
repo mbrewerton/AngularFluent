@@ -1,19 +1,19 @@
 (function () {
     angular.module('angularFluent.components.content', ['angularFluent.core'])
-        .directive('flContent', function () {
-            var controller = [
-                '$scope', '$element', '$attrs',
-                function ($scope, $element, $attrs) {
-                    var self = this;
-                    $element[0].classList.add('fl-content')
-                    console.log();
-                    console.log('Initialised flContent');
-                }
-            ];
+        .directive('flContent', FlContent);
 
+        function FlContent () {
             return {
                 restrict: 'E',
-                controller: controller,
+                transclude: true,
+                replace: true,
+                controller: FlContentController,
+                controllerAs: 'ctrl',
+                template: '<div class="fl-content" ng-transclude></div>'
             }
-        });
+        }
+
+        function FlContentController($scope, $element, $attrs) {
+            var ctrl = this;
+        }
 }());
