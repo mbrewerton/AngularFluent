@@ -9,7 +9,7 @@
                 replace: true,
                 controller: FlNavController,
                 controllerAs: 'ctrl',
-                template: '<nav role="navigation"><ul class="fl-nav" ng-transclude></ul></nav>'
+                template: '<nav role="navigation"><div class="fl-nav" ng-transclude></div></nav>'
             };
         }
 

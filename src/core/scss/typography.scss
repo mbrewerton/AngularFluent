@@ -1,0 +1,43 @@
+@import './_config.scss';
+
+h1, 
+.header, 
+.header-1 {
+    font-size: $font-size-title-1;
+    margin: .8em 0;
+}
+
+h2,
+.header-2 {
+    font-size: $font-size-title-2;
+    margin: .6em 0;
+}
+
+h3,
+.header-3 {
+    font-size: $font-size-title-3;
+    margin: .4em 0;
+}
+
+h4, 
+.header-4 {
+    font-size: $font-size-title-4;
+    margin: .2em 0;
+}
+
+h5, 
+.header-5 {
+    font-size: $font-size-title-5;
+    margin: .2em 0;
+}
+
+h6, 
+.header-6 {
+    font-size: $font-size-title-6;
+    margin: .2em 0;
+}
+
+a {
+    text-decoration: none;
+    
+}

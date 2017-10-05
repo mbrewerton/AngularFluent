@@ -1,6 +1,26 @@
-$theme-default-base: #DDDDDD;
+@import './themes/fluent.scss';
 
 /**
 * Gutters
 */
 $gutter: 20px;
+
+/*
+* Typography
+*/
+$font-size-base: 14px !default;
+$font-size-title-1: 2.2em;
+$font-size-title-2: 2em;
+$font-size-title-3: 1.8em;
+$font-size-title-4: 1.6em;
+$font-size-title-5: 1.4em;
+$font-size-title-6: 1.2em;
+
+$font-color-base: $theme-fluent-base-light;
+$font-color-dark: $theme-fluent-base-dark;
+
+/*
+* Buttons & Input
+*/
+$button-color-primary: $theme-fluent-button-primary;
+$button-color-primary-accent1: $theme-fluent-button-primary-accent1;

@@ -3,8 +3,8 @@
 
 .fl-button {
     padding: .6em 1em;
-    background-color: #44C444;
-    color: #F3F3F3;
+    background-color: $theme-fluent-primary-base;
+    color: $font-color-base;
     display: inline-block;
     cursor: pointer;
     transition: all .1s ease-in;
@@ -17,7 +17,7 @@
 }
 
 .fl-button:hover {
-    background-color: #61D661;
+    background-color: $theme-fluent-primary-accent1;
 }
 
 .fl-button.danger {
@@ -29,17 +29,17 @@
 }
 
 .fl-button.primary {
-    background-color: #44C444;
+    background-color: $theme-fluent-primary-base;
 }
 
 .fl-button.primary:hover {
-    background-color: #61D661;
+    background-color: $theme-fluent-primary-accent1;
 }
 
 .fl-button.secondary {
-    background-color: #3E42BD;
+    background-color: $theme-fluent-secondary-base;
 }
 
 .fl-button.secondary:hover {
-    background-color: #696DDF;
+    background-color: $theme-fluent-secondary-accent1;
 }

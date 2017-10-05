@@ -10,7 +10,7 @@
                 controller: FlNavItemController,
                 requires: ['^flNav'],
                 controllerAs: 'ctrl',
-                template: '<li class="fl-nav-item" ng-transclude></li>'
+                template: '<a class="fl-nav-item" ng-transclude></a>'
             }
         }
 

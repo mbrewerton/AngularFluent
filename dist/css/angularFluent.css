@@ -28,6 +28,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+a {
+  text-decoration: none; }
+
 body {
   background-color: #F3F3F3;
   font-family: sans-serif;
@@ -39,30 +42,12 @@ body, html {
   min-height: 100%;
   height: 100%; }
 
-h1 {
-  font-size: 2.2em;
-  margin: .8em 0; }
-
-h2 {
-  font-size: 2em;
-  margin: .6em 0; }
-
-h3 {
-  font-size: 1.8em;
-  margin: .4em 0; }
-
-h4 {
-  font-size: 1.6em;
-  margin: .2em 0; }
-
-h5 {
-  font-size: 1.4em;
-  margin: .2em 0; }
-
-h6 {
-  font-size: 1.2em;
-  margin: .2em 0; }
-
+/**
+* Gutters
+*/
+/*
+* Typography
+*/
 .fl-button {
   padding: .6em 1em;
   background-color: #44C444;
@@ -150,7 +135,8 @@ h6 {
 .fl-nav-item {
   display: inline-block;
   width: auto;
-  padding: 1em; }
+  padding: 1em;
+  line-height: 1em; }
 
 .fl-nav-item.active:before {
   content: ''; }
@@ -160,3 +146,42 @@ h6 {
 
 .fl-nav-item:hover {
   cursor: pointer; }
+
+
+
+/**
+* Gutters
+*/
+/*
+* Typography
+*/
+h1,
+.header,
+.header-1 {
+  font-size: 2.2em;
+  margin: .8em 0; }
+
+h2,
+.header-2 {
+  font-size: 2em;
+  margin: .6em 0; }
+
+h3,
+.header-3 {
+  font-size: 1.8em;
+  margin: .4em 0; }
+
+h4,
+.header-4 {
+  font-size: 1.6em;
+  margin: .2em 0; }
+
+h5,
+.header-5 {
+  font-size: 1.4em;
+  margin: .2em 0; }
+
+h6,
+.header-6 {
+  font-size: 1.2em;
+  margin: .2em 0; }

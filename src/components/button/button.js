@@ -15,7 +15,7 @@
             if (isAnchor(attrs)) {
                 return '<a class="fl-button" ng-transclude></a>';
             } else {
-                return '<button class="fl-button" ng-transclude></button>'
+                return '<button class="fl-button" type="button" ng-transclude></button>'
             }
         }
 

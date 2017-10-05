@@ -27,7 +27,7 @@
             if (isAnchor(attrs)) {
                 return '<a class="fl-button" ng-transclude></a>';
             } else {
-                return '<button class="fl-button" ng-transclude></button>'
+                return '<button class="fl-button" type="button" ng-transclude></button>'
             }
         }
 
@@ -81,25 +81,6 @@
             }
         });
 }());
-// (function () {
-//     angular.module('angularFluent.components.nav', ['angularFluent.core'])
-//         .controller('flNavController', FlNavController)
-//         .directive('flNav', FlNav);
-
-//     function FlNav() {
-//         return {
-//             restrict: 'E',
-//             controller: FlNavController,
-//             controllerAs: 'ctrl',
-//             template: '<div class="fl-nav"></div>'
-//         }
-//     }
-
-//     function FlNavController($scope, $element, $attrs) {
-//         var self = this;
-//     }
-// }());
-
 (function () {
     angular.module('angularFluent.components.nav', ['angularFluent.core'])
         .directive('flNav', FlNav)
@@ -110,8 +91,8 @@
                 transclude: true,
                 replace: true,
                 controller: FlNavController,
-                controllerAs: 'ctrl',
-                template: '<nav role="navigation"><ul class="fl-nav" ng-transclude></ul></nav>'
+                controllerAs: 'ctrl',                
+                template: '<nav role="navigation"><div class="fl-nav" ng-transclude></div></nav>'
             };
         }
 
@@ -131,7 +112,7 @@
                 controller: FlNavItemController,
                 requires: ['^flNav'],
                 controllerAs: 'ctrl',
-                template: '<li class="fl-nav-item" ng-transclude></li>'
+                template: '<a class="fl-nav-item" ng-transclude></a>'
             }
         }
 
