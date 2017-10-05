@@ -4,6 +4,7 @@
         'angularFluent.components.button',
         'angularFluent.components.content',
         'angularFluent.components.dialog',
+        'angularFluent.components.flexDirection',
         'angularFluent.components.nav',
         'angularFluent.components.navItem',
         'angularFluent.components.theme',
@@ -82,6 +83,28 @@
         });
 }());
 (function () {
+    angular.module('angularFluent.components.flexDirection', ['angularFluent.core'])
+        .directive('flFlexDirection', FlFlexDirection);
+
+    function FlFlexDirection() {
+        return flexDirection = {
+            controller: FlFlexDirectionController,
+            controllerAs: 'ctrl',
+            restrict: 'A',
+            scope: {
+                flexDirection: '@flFlexDirection'
+            }
+        };
+    }
+    function FlFlexDirectionController($scope, $element, $attrs) {
+        var ctrl = this;
+        ctrl.flexDirectionClass = 'fl-flex-direction-' + $scope.flexDirection;
+        $element[0].classList.add(ctrl.flexDirectionClass);
+        console.log(ctrl);
+        console.log($scope);
+    }
+})();
+(function () {
     angular.module('angularFluent.components.nav', ['angularFluent.core'])
         .directive('flNav', FlNav)
 
@@ -91,7 +114,7 @@
                 transclude: true,
                 replace: true,
                 controller: FlNavController,
-                controllerAs: 'ctrl',                
+                controllerAs: 'ctrl',
                 template: '<nav role="navigation"><div class="fl-nav" ng-transclude></div></nav>'
             };
         }

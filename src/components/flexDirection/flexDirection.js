@@ -2,7 +2,7 @@
     angular.module('angularFluent.components.flexDirection', ['angularFluent.core'])
         .directive('flFlexDirection', FlFlexDirection);
 
-    function FlFlexDirection(dependency1) {
+    function FlFlexDirection() {
         return flexDirection = {
             controller: FlFlexDirectionController,
             controllerAs: 'ctrl',
@@ -12,7 +12,11 @@
             }
         };
     }
-    function FlFlexDirectionController() {
+    function FlFlexDirectionController($scope, $element, $attrs) {
         var ctrl = this;
+        ctrl.flexDirectionClass = 'fl-flex-direction-' + $scope.flexDirection;
+        $element[0].classList.add(ctrl.flexDirectionClass);
+        console.log(ctrl);
+        console.log($scope);
     }
 })();
