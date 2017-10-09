@@ -28,9 +28,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-a {
-  text-decoration: none; }
-
+/**
+* Gutters
+*/
+/*
+* Typography
+*/
+/*
+* Buttons & Input
+*/
 body {
   background-color: #F3F3F3;
   font-family: sans-serif;
@@ -47,6 +53,9 @@ body, html {
 */
 /*
 * Typography
+*/
+/*
+* Buttons & Input
 */
 .fl-button {
   padding: .6em 1em;
@@ -132,11 +141,22 @@ body, html {
   background-color: #252525;
   color: #F3F3F3; }
 
+/**
+* Gutters
+*/
+/*
+* Typography
+*/
+/*
+* Buttons & Input
+*/
 .fl-nav-item {
   display: inline-block;
   width: auto;
   padding: 1em;
-  line-height: 1em; }
+  line-height: 1em;
+  text-decoration: none;
+  color: #F3F3F3; }
 
 .fl-nav-item.active:before {
   content: ''; }
@@ -147,6 +167,11 @@ body, html {
 .fl-nav-item:hover {
   cursor: pointer; }
 
+.fl-flex .fl-flex-direction-row {
+  display: inline-block; }
+
+.fl-flex .fl-flex-direction-column {
+  display: block; }
 
 
 /**
@@ -154,6 +179,9 @@ body, html {
 */
 /*
 * Typography
+*/
+/*
+* Buttons & Input
 */
 h1,
 .header,
@@ -185,3 +213,6 @@ h6,
 .header-6 {
   font-size: 1.2em;
   margin: .2em 0; }
+
+a {
+  text-decoration: none; }

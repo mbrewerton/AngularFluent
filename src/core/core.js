@@ -9,5 +9,6 @@
         'angularFluent.components.navItem',
         'angularFluent.components.theme',
         'angularFluent.components.button',
+        'angularFluent.layout'
     ]);
 }());

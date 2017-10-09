@@ -1,3 +1,16 @@
-.layout {
+.fl-flex {
+    display: block;
+    
+    .fl-flex-direction-row {
+        display: inline-block;
+    }
+    .fl-flex-direction-column {
+        display: block;
+    }
+}
+
+.fl-flex-grow {
+    display: table;
+
     
 }

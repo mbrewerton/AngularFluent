@@ -1,8 +1,12 @@
+@import '../../core/scss/_config.scss';
+
 .fl-nav-item {
     display: inline-block;
     width: auto;
     padding: 1em;
     line-height: 1em;
+    text-decoration: none;
+    color: $font-color-light;
 }
 
 .fl-nav-item.active:before {

@@ -6,7 +6,6 @@
             return {
                 restrict: 'E',
                 transclude: true,
-                replace: true,
                 controller: FlContentController,
                 controllerAs: 'ctrl',
                 template: '<div class="fl-content" ng-transclude></div>'

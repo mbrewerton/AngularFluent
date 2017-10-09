@@ -16,16 +16,23 @@
     <link rel="stylesheet" href="/dist/libs/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
-<body ng-app="fluentDemo" fl-theme>
+<body ng-app="fluentDemo">
     <section>
         <fl-nav>
             <fl-nav-item ng-href="/home" class="active">Item #1</fl-nav-item>
             <fl-nav-item ng-href="/item2">Item #2</fl-nav-item>
             <fl-nav-item>Item #3</fl-nav-item>
         </fl-nav>
-        <fl-content>
+        <fl-content fl-flex fl-flex-fill>
             <!-- <fl-dialog fl-dialog-show="true" fl-dialog-header="This is a dialog."></fl-dialog> -->
-            <div fl-flex-direction="row"></div>
+            <div>
+                <h1>I am the row heading.</h1>
+                <fl-content>Some more content inside the flex-row.</fl-content> 
+            </div>
+            <div fl-flex-direction="row">
+                <h1>I am the second row heading.</h1>
+                <fl-content>Some more content inside the flex-row.</fl-content> 
+            </div>
             <h1>Fl Content H1</h1>
             <fl-button href="/">Default</fl-button>
             <fl-button class="success">Success</fl-button>

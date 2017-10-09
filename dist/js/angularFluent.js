@@ -9,6 +9,7 @@
         'angularFluent.components.navItem',
         'angularFluent.components.theme',
         'angularFluent.components.button',
+        'angularFluent.layout'
     ]);
 }());
 (function () {
@@ -45,7 +46,6 @@
             return {
                 restrict: 'E',
                 transclude: true,
-                replace: true,
                 controller: FlContentController,
                 controllerAs: 'ctrl',
                 template: '<div class="fl-content" ng-transclude></div>'
@@ -88,14 +88,21 @@
 
     function FlFlexDirection() {
         return flexDirection = {
-            controller: FlFlexDirectionController,
+            controller: ['$scope', '$element', '$attrs', FlFlexDirectionController],
             controllerAs: 'ctrl',
             restrict: 'A',
             scope: {
                 flexDirection: '@flFlexDirection'
-            }
+            },
+            // template: getTemplate,
         };
     }
+
+    function getTemplate(element, attrs) {
+        console.log('attrs: ', attrs.flFlexDirection);
+        return '<div class="fl-flex"><div class="fl-flex-direction-' + attrs.flFlexDirection + '" ng-transclude></div></div>'
+    }
+
     function FlFlexDirectionController($scope, $element, $attrs) {
         var ctrl = this;
         ctrl.flexDirectionClass = 'fl-flex-direction-' + $scope.flexDirection;
@@ -167,3 +174,24 @@
             }
         });
 }());
+(function () {
+    angular.module('angularFluent.layout', ['angularFluent.core'])
+        .directive('flFlex', FlFlex);
+
+    function FlFlex() {
+        return {
+            controller: ['$scope', '$element', '$attrs', FlFlexController],
+            controllerAs: 'ctrl',
+            restrict: 'A'
+        }
+    }
+
+    function FlFlexController($scope, $element, $attrs) {
+        $element.addClass('fl-flex');
+    }
+
+    function getTemplate($attrs) {
+        console.log('Attrs in fl-flex', $attrs);
+        return '';
+    }
+})();
