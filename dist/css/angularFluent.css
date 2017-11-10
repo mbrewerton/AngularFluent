@@ -37,6 +37,9 @@ table {
 /*
 * Buttons & Input
 */
+/*
+* Navigation
+*/
 body {
   background-color: #F3F3F3;
   font-family: sans-serif;
@@ -56,6 +59,9 @@ body, html {
 */
 /*
 * Buttons & Input
+*/
+/*
+* Navigation
 */
 .fl-button {
   padding: .6em 1em;
@@ -135,6 +141,18 @@ body, html {
   bottom: -20px;
   z-index: -1; }
 
+/**
+* Gutters
+*/
+/*
+* Typography
+*/
+/*
+* Buttons & Input
+*/
+/*
+* Navigation
+*/
 .fl-nav {
   display: block;
   width: 100%;
@@ -150,28 +168,41 @@ body, html {
 /*
 * Buttons & Input
 */
+/*
+* Navigation
+*/
 .fl-nav-item {
   display: inline-block;
   width: auto;
   padding: 1em;
   line-height: 1em;
   text-decoration: none;
-  color: #F3F3F3; }
+  color: #F3F3F3;
+  position: relative;
+  overflow: hidden;
+  overflow: hidden; }
+  .fl-nav-item.active {
+    background-color: #3d3d3d;
+    box-shadow: inset 0px 0px 30px -12px #ffff; }
+  .fl-nav-item .fl-nav-item-light {
+    background-color: white;
+    height: 2px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .fl-nav-item:hover {
+    cursor: pointer; }
 
-.fl-nav-item.active:before {
-  content: ''; }
-
-.fl-nav-item.active:before {
-  content: ''; }
-
-.fl-nav-item:hover {
-  cursor: pointer; }
-
-.fl-flex .fl-flex-direction-row {
-  display: inline-block; }
-
-.fl-flex .fl-flex-direction-column {
+.fl-flex {
   display: block; }
+  .fl-flex .fl-flex-direction-row {
+    display: inline-block; }
+  .fl-flex .fl-flex-direction-column {
+    display: block; }
+  .fl-flex.fl-flex-grow {
+    display: table; }
 
 
 /**
@@ -182,6 +213,9 @@ body, html {
 */
 /*
 * Buttons & Input
+*/
+/*
+* Navigation
 */
 h1,
 .header,

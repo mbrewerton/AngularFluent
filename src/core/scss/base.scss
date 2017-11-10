@@ -6,7 +6,7 @@
 @import './_config.scss';
 
 body {
-    background-color: #F3F3F3;
+    background-color: $theme-fluent-base-light;
     font-family: sans-serif; /* TODO: Download Webfont to use instead */
     font-size: 16px;
     color: $font-color-base;

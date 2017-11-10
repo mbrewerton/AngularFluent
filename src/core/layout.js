@@ -1,7 +1,7 @@
 (function () {
     angular.module('angularFluent.layout', ['angularFluent.core'])
         .directive('flFlex', FlFlex)
-        .directive('flFlexGrow', FlFlexGrow)
+        .directive('flFlexFill', FlFlexFill)
 
     function FlFlex() {
         return {
@@ -11,9 +11,9 @@
         }
     }
 
-    function FlFlexGrow() {
+    function FlFlexFill() {
         return {
-            controller: ['$scope', '$element', '$attrs', FlFlexGrowController],
+            controller: ['$scope', '$element', '$attrs', FlFlexFillController],
             controllerAs: 'ctrl',
             restrict: 'A'
         }
@@ -23,7 +23,7 @@
         $element.addClass('fl-flex');
     }
 
-    function FlFlexGrowController($scope, $element, $attrs) {
+    function FlFlexFillController($scope, $element, $attrs) {
         $element.addClass('fl-flex-grow');
     }
 

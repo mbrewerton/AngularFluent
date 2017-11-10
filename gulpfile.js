@@ -50,6 +50,10 @@ gulp.task('build:css', function() {
         .pipe(gulp.dest(paths.dist.css));
 });
 
+gulp.task('default', function() {
+    gulp.start('build:js');
+});
+
 gulp.task('watch:js:build', function() {
     watch(paths.src.js + '**/*.js', {}, function() { gulp.start('build:js'); });
 })

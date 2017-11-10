@@ -1,0 +1,4 @@
+@mixin Glass($colour) {
+    opacity: .8;
+    background-color: opacify($color: $colour, $amount: .5);
+}

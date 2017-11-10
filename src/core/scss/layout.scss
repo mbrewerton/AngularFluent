@@ -7,10 +7,8 @@
     .fl-flex-direction-column {
         display: block;
     }
-}
-
-.fl-flex-grow {
-    display: table;
-
     
+    &.fl-flex-grow {
+        display: table;
+    }
 }

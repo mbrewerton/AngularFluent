@@ -142,12 +142,24 @@
                 controller: FlNavItemController,
                 requires: ['^flNav'],
                 controllerAs: 'ctrl',
-                template: '<a class="fl-nav-item" ng-transclude></a>'
+                template: '<a class="fl-nav-item">{{ctrl.lightTop}}<p ng-transclude></p></a>'
             }
         }
 
-        function FlNavItemController() {
+        function GetTemplate() {
+
+        }
+
+        function FlNavItemController($element) {
             var ctrl = this;
+            ctrl.parent = $element.parent();
+            ctrl.lightTemplate = '<span class="fl-nav-item-light"></span>';
+            ctrl.lightTop = angular.element(ctrl.lightTemplate);
+            ctrl.lightBottom = angular.element(ctrl.lightTemplate);
+            
+            $element.on('mousemove', function(evt) {
+                console.log(evt.offsetX);
+            });
         }
 }());
 (function () {
@@ -176,7 +188,8 @@
 }());
 (function () {
     angular.module('angularFluent.layout', ['angularFluent.core'])
-        .directive('flFlex', FlFlex);
+        .directive('flFlex', FlFlex)
+        .directive('flFlexFill', FlFlexFill)
 
     function FlFlex() {
         return {
@@ -186,8 +199,20 @@
         }
     }
 
+    function FlFlexFill() {
+        return {
+            controller: ['$scope', '$element', '$attrs', FlFlexFillController],
+            controllerAs: 'ctrl',
+            restrict: 'A'
+        }
+    }
+
     function FlFlexController($scope, $element, $attrs) {
         $element.addClass('fl-flex');
+    }
+
+    function FlFlexFillController($scope, $element, $attrs) {
+        $element.addClass('fl-flex-grow');
     }
 
     function getTemplate($attrs) {
