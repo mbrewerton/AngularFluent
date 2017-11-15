@@ -188,12 +188,17 @@ body, html {
     background-color: white;
     height: 2px;
     width: 100%;
-    display: block;
+    display: none;
     position: absolute;
-    top: 0;
     left: 0; }
+    .fl-nav-item .fl-nav-item-light.light-top {
+      top: 0; }
+    .fl-nav-item .fl-nav-item-light.light-bottom {
+      bottom: 0; }
   .fl-nav-item:hover {
     cursor: pointer; }
+    .fl-nav-item:hover .fl-nav-item-light {
+      display: block; }
 
 .fl-flex {
   display: block; }

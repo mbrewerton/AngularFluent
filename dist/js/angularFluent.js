@@ -142,23 +142,26 @@
                 controller: FlNavItemController,
                 requires: ['^flNav'],
                 controllerAs: 'ctrl',
-                template: '<a class="fl-nav-item">{{ctrl.lightTop}}<p ng-transclude></p></a>'
+                template: GetTemplate
             }
         }
 
         function GetTemplate() {
-
+            return '<a class="fl-nav-item"><span class="fl-nav-item-light light-top"></span><span ng-transclude></span><span class="fl-nav-item-light light-bottom"></span></a>';
         }
 
         function FlNavItemController($element) {
             var ctrl = this;
-            ctrl.parent = $element.parent();
-            ctrl.lightTemplate = '<span class="fl-nav-item-light"></span>';
-            ctrl.lightTop = angular.element(ctrl.lightTemplate);
-            ctrl.lightBottom = angular.element(ctrl.lightTemplate);
+            ctrl.topLight = $element[0].firstChild;
+            ctrl.bottomLight = $element[0].lastChild;
+            console.log($element[0]);
             
             $element.on('mousemove', function(evt) {
-                console.log(evt.offsetX);
+                // console.log(evt.offsetX);
+                console.log(ctrl);
+                var x = evt.offsetX * 2;
+                ctrl.topLight.style.left = x + 'px';
+                ctrl.bottomLight.style.left = x + 'px';
             });
         }
 }());
