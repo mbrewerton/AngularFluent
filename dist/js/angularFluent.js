@@ -122,7 +122,7 @@
                 replace: true,
                 controller: FlNavController,
                 controllerAs: 'ctrl',
-                template: '<nav role="navigation"><div class="fl-nav" ng-transclude></div></nav>'
+                template: '<nav role="navigation"><ul class="fl-nav" ng-transclude></ul></nav>'
             };
         }
 
@@ -147,22 +147,30 @@
         }
 
         function GetTemplate() {
-            return '<a class="fl-nav-item"><span class="fl-nav-item-light light-top"></span><span ng-transclude></span><span class="fl-nav-item-light light-bottom"></span></a>';
+            return '<li class="fl-nav-item"><span class="fl-nav-item-light light-top"></span><a ng-href="{{ctrl.href}}" ng-transclude><span></span></a><span class="fl-nav-item-light light-bottom"></span></li>';
         }
 
-        function FlNavItemController($element) {
+        function FlNavItemController($element, $attrs) {
             var ctrl = this;
             ctrl.topLight = $element[0].firstChild;
             ctrl.bottomLight = $element[0].lastChild;
+            ctrl.href = $attrs.href || $attrs.ngHref;
+            
             console.log($element[0]);
             
             $element.on('mousemove', function(evt) {
                 // console.log(evt.offsetX);
-                console.log(ctrl);
-                var x = evt.offsetX * 2;
+                var x = evt.offsetX - ($element[0].offsetWidth / 2)
                 ctrl.topLight.style.left = x + 'px';
                 ctrl.bottomLight.style.left = x + 'px';
             });
+
+            RemoveAttrs($element);
+        }
+
+        function RemoveAttrs($element) {
+            $element.removeAttr('ng-href');
+            $element.removeAttr('href');
         }
 }());
 (function () {
