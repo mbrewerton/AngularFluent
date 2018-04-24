@@ -1,7 +1,7 @@
 (function () {
     angular.module('angularFluent.core', [
         'ngAnimate',
-        'angularFluent.components.button',
+        'angularFluent.components',
         'angularFluent.components.content',
         'angularFluent.components.dialog',
         'angularFluent.components.flexDirection',
